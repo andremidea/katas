@@ -46,11 +46,11 @@
                 (= distance closest) [closest (conj new-nodes node)]))
             [Integer/MAX_VALUE []] nodes+closeness)))
 
-(defn iterate-edges [graph nodes last-closeness]
+(defn breadth-first-search [graph nodes last-closeness]
   (let [[closest new-nodes] (check-closest graph nodes)]
     (println nodes last-closeness new-nodes closest)
     (if (>= closest last-closeness) last-closeness
         (recur graph (mapcat #(get graph %) new-nodes) closest))))
 
 (defn check-min-value [graph]
-  (iterate-edges graph [(-> graph first first)] Integer/MAX_VALUE))
+  (breadth-first-search graph [(-> graph first first)] Integer/MAX_VALUE))
