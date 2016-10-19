@@ -1,4 +1,4 @@
-(ns time-to-exposure)
+(ns katas.time-to-exposure)
 
 (def input [[1 2] [2 3] [3 4] [3 7] [4 5] [4 6] [7 8]])
 
@@ -48,9 +48,8 @@
 
 (defn breadth-first-search [graph nodes last-closeness]
   (let [[closest new-nodes] (check-closest graph nodes)]
-    (println nodes last-closeness new-nodes closest)
     (if (>= closest last-closeness) last-closeness
-        (recur graph (mapcat #(get graph %) new-nodes) closest))))
+        (recur graph (mapcat #(remove #{%} (get graph %)) new-nodes) closest))))
 
 (defn check-min-value [graph]
   (breadth-first-search graph [(-> graph first first)] Integer/MAX_VALUE))

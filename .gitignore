@@ -1,0 +1,13 @@
+/RUNNING_PID
+/logs/
+/project/*-shim.sbt
+/project/project/
+/project/target/
+/target/
+*.tgz
+.idea
+*.iml
+.ensime*
+*.pyc
+datomic
+tmp
