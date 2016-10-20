@@ -1,4 +1,5 @@
 (ns katas.pangrams
+  "https://www.hackerrank.com/challenges/pangrams"
   (:require [clojure.test :refer :all]
             [clojure.string :as str]))
 
@@ -18,4 +19,3 @@
    (= (pangrams "We promptly judged antique ivory buckles for the next prize") "pangram"))
   (is
    (= (pangrams "We promptly judged antique ivory buckles for the prize") "not pangram")))
-
