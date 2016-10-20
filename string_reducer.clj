@@ -1,4 +1,5 @@
 (ns katas.string-reducer
+  "https://www.hackerrank.com/challenges/reduced-string"
   (:require [clojure.test :refer :all]))
 
 
